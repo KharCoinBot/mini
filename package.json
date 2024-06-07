@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build-old": "tsc && vite build",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "prettier": "prettier --check \"**/*.{ts,tsx}\"",
@@ -34,6 +34,7 @@
     "@types/node": "^20.14.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-basic-ssl": "^1.1.0",
     "@vitejs/plugin-react": "^4.3.0",
     "identity-obj-proxy": "^3.0.0",
     "jsdom": "^24.1.0",
