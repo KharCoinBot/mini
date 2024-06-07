@@ -42,6 +42,13 @@ function HeaderMenu() {
       direction="row"
     // wrap="wrap"
     >
+       <UnstyledButton
+          mr={'xs'}
+          ml={'xs'}
+          style={{ textAlign: 'center', color: 'white' }}
+        >
+          <IconWallet style={{ width: rem(24), height: rem(24) }} />
+        </UnstyledButton>
       {/* <Link to={'/'}> */}
         <UnstyledButton
           mr={'xs'}

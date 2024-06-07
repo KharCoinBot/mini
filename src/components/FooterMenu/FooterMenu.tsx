@@ -1,7 +1,5 @@
-import React from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Container, Flex, Tabs, UnstyledButton, rem } from '@mantine/core';
-import { IconCoin, IconStar, IconFriends, IconCat, IconHome2, IconBolt, IconGift } from '@tabler/icons-react';
+import { IconCoin, IconStar, IconFriends, IconCat, IconHome2, IconBolt, IconGift, IconDeer } from '@tabler/icons-react';
 
 function FooterMenu() {
   // const navigate = useNavigate();
@@ -50,7 +48,7 @@ function FooterMenu() {
           mt={'xs'}
           style={{ textAlign: 'center', color: 'white' }}
         >
-          <IconCoin style={{ width: rem(24), height: rem(24) }} />
+          <IconCoin style={{ width: rem(15), height: rem(15) }} />
           <br />
           درآمد
         </UnstyledButton>
@@ -61,7 +59,7 @@ function FooterMenu() {
           mt={'xs'}
           style={{ textAlign: 'center', color: 'white' }}
         >
-          <IconBolt style={{ width: rem(24), height: rem(24) }} />
+          <IconBolt style={{ width: rem(15), height: rem(15) }} />
           <br />
           تقویت
         </UnstyledButton>
@@ -72,7 +70,7 @@ function FooterMenu() {
           ml={'xl'}
           style={{ textAlign: 'center', color: 'white' }}
         >
-          <IconStar style={{ width: rem(33), height: rem(33) }} />
+          <IconDeer style={{ width: rem(33), height: rem(33) }} />
           <br />
           بازی
         </UnstyledButton>
@@ -83,7 +81,7 @@ function FooterMenu() {
           mt={'xs'}
           style={{ textAlign: 'center', color: 'white' }}
         >
-          <IconFriends style={{ width: rem(24), height: rem(24) }} />
+          <IconFriends style={{ width: rem(15), height: rem(15) }} />
           <br />
           دوستان
         </UnstyledButton>
@@ -94,12 +92,10 @@ function FooterMenu() {
           mt={'xs'}
           style={{ textAlign: 'center', color: 'white' }}
         >
-          <IconGift style={{ width: rem(24), height: rem(24) }} />
+          <IconGift style={{ width: rem(15), height: rem(15) }} />
           <br />
           جایزه
         </UnstyledButton>
-
-
 
       {/* </Link> */}
     </Flex>
