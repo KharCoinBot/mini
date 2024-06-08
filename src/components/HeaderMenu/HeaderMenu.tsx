@@ -17,8 +17,8 @@ function HeaderMenu({ username, photoUrl }: { username: string; photoUrl: string
           ml={'xs'}
           style={{ textAlign: 'center', color: 'white' }}
         >
-          <IconAt style={{ width: rem(24), height: rem(24) }} />
           {username}
+          <IconAt style={{ width: rem(24), height: rem(24) }} />          
         </UnstyledButton>
         <UnstyledButton
           mr={'xs'}
