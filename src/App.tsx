@@ -25,7 +25,7 @@ export default function App() {
               withBorder={false}
             >
               <AppShell.Header>
-                <HeaderMenu username={user?.username?? 'KCUser'} photoUrl={user?.photo_url?? 'https://kc.rahomaskan.com/assets/images/kharcoin.jpg'} />
+                <HeaderMenu username={user?.username?? 'Khar'} photoUrl={user?.photo_url?? 'https://kc.rahomaskan.com/assets/images/kharcoin.jpg'} />
               </AppShell.Header>
               <AppShell.Main>
                 <Router />
@@ -40,34 +40,3 @@ export default function App() {
     </React.StrictMode>
   );
 }
-
-// <React.StrictMode>
-// <DirectionProvider initialDirection="rtl">
-// <MantineProvider theme={theme}>
-// <Container size={'xs'} bg={'#c3b091'}>
-//   <AppShell
-//     header={{ height: 40 }}
-//     footer={{ height: 60 }}
-//     withBorder={false}
-//   >
-//     <AppShell.Header
-//       p="10"
-//       style={{
-//         background: 'linear-gradient(180deg, #0e87cc  30%, #c3b091)',
-//         color: 'white',
-//         fontWeight: 100,
-//       }}
-//     >
-//       <Title order={1}>$</Title>
-//     </AppShell.Header>
-//     <AppShell.Main>
-//       <Router />
-//     </AppShell.Main>
-//     <AppShell.Footer>
-//       
-//     </AppShell.Footer>
-//   </AppShell>
-// </Container>
-// </MantineProvider>
-//  </DirectionProvider>
-//  </React.StrictMode>

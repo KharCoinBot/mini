@@ -1,46 +1,16 @@
 import { Container, Flex, Tabs, UnstyledButton, rem } from '@mantine/core';
 import { IconCoin, IconStar, IconFriends, IconCat, IconHome2, IconBolt, IconGift, IconDeer } from '@tabler/icons-react';
-
+import { Link } from 'react-router-dom';
 function FooterMenu() {
-  // const navigate = useNavigate();
-  // const { tabValue } = useParams();
-
   return (
-    // <Tabs 
-    //     variant="pills"
-    //     // value={tabValue}
-    //     // onChange={(value) => navigate(`/${value}`)}
-    //     style={{ position: 'fixed', bottom: 0, width: '100%' }} 
-    //     inverted
-    // >
-    //     <Tabs.List grow>
-    //         <Tabs.Tab value="Earn"      leftSection={<IconCoin size={16} />} >
-    //           <Link to={'/Game'}>درآمد</Link>
-    //         </Tabs.Tab>
-    //         <Tabs.Tab value="Boosts"    leftSection={<IconStar size={16} />} >
-    //           <Link to={'/Game'}>تقویت</Link>
-    //         </Tabs.Tab>
-    //         <Tabs.Tab value="Game"      leftSection={<IconStar size={16} />} >
-    //           <Link to={'/Game'}>بازی</Link>
-    //         </Tabs.Tab>
-    //         <Tabs.Tab value="Friends"   leftSection={<IconFriends size={16} />} >
-    //           <Link to={'/Game'}>دوستان</Link>
-    //         </Tabs.Tab>
-    //         <Tabs.Tab value="Gifts"      leftSection={<IconCat size={16} />} >
-    //           <Link to={'/Game'}>جایزه</Link>
-    //         </Tabs.Tab>
-    //     </Tabs.List>      
-    // </Tabs>
     <Container size={'xs'}>
       <Flex
-      mih={70}
-      // gap="xs"
-      justify="center"
-      direction="row"
-      wrap="nowrap"
-      align="center"
-    >
-      {/* <Link to={'/'}> */}
+        mih={70}
+        justify="center"
+        direction="row"
+        wrap="nowrap"
+        align="center"
+      >
         <UnstyledButton
           size="xs"
           mr={'xs'}
@@ -66,7 +36,6 @@ function FooterMenu() {
         </UnstyledButton>
 
         <UnstyledButton
-          // mr={'xs'}
           mr={'xl'}
           ml={'xl'}
           style={{ textAlign: 'center', color: 'white' }}
@@ -76,17 +45,19 @@ function FooterMenu() {
           بازی
         </UnstyledButton>
 
-        <UnstyledButton
-          size="xs"
-          mr={'xs'}
-          ml={'xs'}
-          mt={'xs'}
-          style={{ textAlign: 'center', color: 'white' }}
-        >
-          <IconFriends style={{ width: rem(15), height: rem(15) }} />
-          <br />
-          دوستان
-        </UnstyledButton>
+        {/* <Link to="/Friends"> */}
+          <UnstyledButton
+            size="xs"
+            mr={'xs'}
+            ml={'xs'}
+            mt={'xs'}
+            style={{ textAlign: 'center', color: 'white' }}
+          >
+            <IconFriends style={{ width: rem(15), height: rem(15) }} />
+            <br />
+            دوستان
+          </UnstyledButton>
+        {/* </Link> */}
 
         <UnstyledButton
           size="xs"
@@ -100,8 +71,8 @@ function FooterMenu() {
           جایزه
         </UnstyledButton>
 
-      {/* </Link> */}
-    </Flex>
+        {/* </Link> */}
+      </Flex>
     </Container>
   );
 }
