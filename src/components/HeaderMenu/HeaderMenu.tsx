@@ -1,57 +1,25 @@
-import React from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Avatar, Container, Flex, UnstyledButton, rem } from '@mantine/core';
-import { IconUser, IconUserShare, IconWallet } from '@tabler/icons-react';
+import { IconAt, IconUserShare, IconWallet } from '@tabler/icons-react';
 
 function HeaderMenu({ username, photoUrl }: { username: string; photoUrl: string }) {
-  // const navigate = useNavigate();
-  // const { tabValue } = useParams();
-
   return (
-    // <Tabs 
-    //     variant="pills"
-    //     // value={tabValue}
-    //     // onChange={(value) => navigate(`/${value}`)}
-    //     style={{ position: 'fixed', bottom: 0, width: '100%' }} 
-    //     inverted
-    // >
-    //     <Tabs.List grow>
-    //         <Tabs.Tab value="Earn"      leftSection={<IconCoin size={16} />} >
-    //           <Link to={'/Game'}>درآمد</Link>
-    //         </Tabs.Tab>
-    //         <Tabs.Tab value="Boosts"    leftSection={<IconStar size={16} />} >
-    //           <Link to={'/Game'}>تقویت</Link>
-    //         </Tabs.Tab>
-    //         <Tabs.Tab value="Game"      leftSection={<IconStar size={16} />} >
-    //           <Link to={'/Game'}>بازی</Link>
-    //         </Tabs.Tab>
-    //         <Tabs.Tab value="Friends"   leftSection={<IconFriends size={16} />} >
-    //           <Link to={'/Game'}>دوستان</Link>
-    //         </Tabs.Tab>
-    //         <Tabs.Tab value="Gifts"      leftSection={<IconCat size={16} />} >
-    //           <Link to={'/Game'}>جایزه</Link>
-    //         </Tabs.Tab>
-    //     </Tabs.List>      
-    // </Tabs>
     <Container size={'xs'}>
-    <Flex
-      mih={60}
-      gap="xs"
-      justify="flex-end"
-      align="center"
-      direction="row"
-    // wrap="wrap"
-    >
-      <Avatar variant="filled" radius="xl" size="sm" color="yellow" src={photoUrl} alt={username}/>
-       <UnstyledButton
+      <Flex
+        mih={60}
+        gap="xs"
+        justify="flex-end"
+        align="center"
+        direction="row"
+      >
+        <Avatar variant="filled" radius="xl" size="sm" color="yellow" src={photoUrl} alt={username} />
+        <UnstyledButton
           mr={'xs'}
           ml={'xs'}
           style={{ textAlign: 'center', color: 'white' }}
         >
-          <IconUser style={{ width: rem(24), height: rem(24) }} />          
+          <IconAt style={{ width: rem(24), height: rem(24) }} />
           {username}
-        </UnstyledButton>        
-      {/* <Link to={'/'}> */}
+        </UnstyledButton>
         <UnstyledButton
           mr={'xs'}
           ml={'xs'}
@@ -67,9 +35,7 @@ function HeaderMenu({ username, photoUrl }: { username: string; photoUrl: string
         >
           <IconWallet style={{ width: rem(24), height: rem(24) }} />
         </UnstyledButton>
-
-      {/* </Link> */}
-    </Flex>
+      </Flex>
     </Container>
   );
 }
