@@ -34,15 +34,15 @@ function FooterMenu() {
     <Container size={'xs'}>
       <Flex
       mih={70}
-      gap="xs"
+      // gap="xs"
       justify="center"
-      align="flex-start"
       direction="row"
-      wrap="wrap"
-    // wrap="wrap"
+      wrap="nowrap"
+      align="center"
     >
       {/* <Link to={'/'}> */}
         <UnstyledButton
+          size="xs"
           mr={'xs'}
           ml={'xs'}
           mt={'xs'}
@@ -54,6 +54,7 @@ function FooterMenu() {
         </UnstyledButton>
 
         <UnstyledButton
+          size="xs"
           mr={'xs'}
           ml={'xs'}
           mt={'xs'}
@@ -76,6 +77,7 @@ function FooterMenu() {
         </UnstyledButton>
 
         <UnstyledButton
+          size="xs"
           mr={'xs'}
           ml={'xs'}
           mt={'xs'}
@@ -87,6 +89,7 @@ function FooterMenu() {
         </UnstyledButton>
 
         <UnstyledButton
+          size="xs"
           mr={'xs'}
           ml={'xs'}
           mt={'xs'}
