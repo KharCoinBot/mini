@@ -5,9 +5,11 @@ import { theme } from './theme';
 import React from 'react';
 import FooterMenu from './components/FooterMenu/FooterMenu';
 import HeaderMenu from './components/HeaderMenu/HeaderMenu';
-
+import WebApp from '@twa-dev/sdk';
 
 export default function App() {
+  const user = WebApp.initDataUnsafe.user;
+  const usertgid = user?.id;
   return (
     <React.StrictMode>
       <DirectionProvider initialDirection="rtl">
@@ -23,7 +25,7 @@ export default function App() {
               withBorder={false}
             >
               <AppShell.Header>
-                <HeaderMenu />
+                <HeaderMenu username={user?.username?? 'KCUser'} photoUrl={user?.photo_url?? 'https://kc.rahomaskan.com/assets/images/kharcoin.jpg'} />
               </AppShell.Header>
               <AppShell.Main>
                 <Router />

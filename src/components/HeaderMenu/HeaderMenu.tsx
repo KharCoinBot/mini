@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Container, Flex, UnstyledButton, rem } from '@mantine/core';
-import { IconUserShare, IconWallet } from '@tabler/icons-react';
+import { Avatar, Container, Flex, UnstyledButton, rem } from '@mantine/core';
+import { IconUser, IconUserShare, IconWallet } from '@tabler/icons-react';
 
-function HeaderMenu() {
+function HeaderMenu({ username, photoUrl }: { username: string; photoUrl: string }) {
   // const navigate = useNavigate();
   // const { tabValue } = useParams();
 
@@ -42,13 +42,15 @@ function HeaderMenu() {
       direction="row"
     // wrap="wrap"
     >
+      <Avatar variant="filled" radius="xl" size="sm" color="yellow" src={photoUrl} alt={username}/>
        <UnstyledButton
           mr={'xs'}
           ml={'xs'}
           style={{ textAlign: 'center', color: 'white' }}
         >
-          <IconWallet style={{ width: rem(24), height: rem(24) }} />
-        </UnstyledButton>
+          <IconUser style={{ width: rem(24), height: rem(24) }} />          
+          {username}
+        </UnstyledButton>        
       {/* <Link to={'/'}> */}
         <UnstyledButton
           mr={'xs'}
