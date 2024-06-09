@@ -5,11 +5,11 @@ import { theme } from './theme';
 import React from 'react';
 import FooterMenu from './components/FooterMenu/FooterMenu';
 import HeaderMenu from './components/HeaderMenu/HeaderMenu';
-import WebApp from '@twa-dev/sdk';
+
 
 export default function App() {
-  const user = WebApp.initDataUnsafe.user;
-  const usertgid = user?.id;
+  // const user = WebApp.initDataUnsafe.user;
+  // const usertgid = user?.id;
   return (
     <React.StrictMode>
       <DirectionProvider initialDirection="rtl">
@@ -18,14 +18,14 @@ export default function App() {
         forceColorScheme = 'dark'
         >
           {/* <Notifications /> */}
-          <Container size={'xs'}>
+          {/* <Container size={'xs'}>
             <AppShell
               header={{ height: 40 }}
               footer={{ height: 70 }}
               withBorder={false}
             >
               <AppShell.Header>
-                <HeaderMenu username={user?.username?? 'Khar'} photoUrl={user?.photo_url?? 'https://kc.rahomaskan.com/assets/images/kharcoin.jpg'} />
+                <HeaderMenu username={user?.username?? 'KC'} photoUrl={user?.photo_url?? 'https://kc.rahomaskan.com/assets/images/kharcoin.jpg'} />
               </AppShell.Header>
               <AppShell.Main>
                 <Router />
@@ -34,7 +34,8 @@ export default function App() {
                 <FooterMenu />
               </AppShell.Footer>
             </AppShell>
-          </Container>
+          </Container> */}
+          <Router />
         </MantineProvider>
       </DirectionProvider>
     </React.StrictMode>

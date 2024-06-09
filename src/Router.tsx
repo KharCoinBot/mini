@@ -5,7 +5,6 @@ import { EarnPage } from './pages/Earn.page';
 import { BoostsPage } from './pages/Boosts.page';
 import { FriendsPage } from './pages/Friends.page';
 import { GiftsPage } from './pages/Gifts.page';
-
 const router = createMemoryRouter([
   {
     path: '/',

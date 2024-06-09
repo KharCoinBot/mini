@@ -11,41 +11,48 @@ function FooterMenu() {
         wrap="nowrap"
         align="center"
       >
-        <UnstyledButton
-          size="xs"
-          mr={'xs'}
-          ml={'xs'}
-          mt={'xs'}
-          style={{ textAlign: 'center', color: 'white' }}
-        >
-          <IconCoin style={{ width: rem(15), height: rem(15) }} />
-          <br />
-          درآمد
-        </UnstyledButton>
+        <Link to="/Earn">
+          <UnstyledButton
+            size="xs"
+            mr={'xs'}
+            ml={'xs'}
+            mt={'xs'}
+            style={{ textAlign: 'center', color: 'white' }}
+          >
+            <IconCoin style={{ width: rem(15), height: rem(15) }} />
+            <br />
+            درآمد
+          </UnstyledButton>
+        </Link>
 
-        <UnstyledButton
-          size="xs"
-          mr={'xs'}
-          ml={'xs'}
-          mt={'xs'}
-          style={{ textAlign: 'center', color: 'white' }}
-        >
-          <IconBolt style={{ width: rem(15), height: rem(15) }} />
-          <br />
-          تقویت
-        </UnstyledButton>
 
-        <UnstyledButton
-          mr={'xl'}
-          ml={'xl'}
-          style={{ textAlign: 'center', color: 'white' }}
-        >
-          <IconDeer style={{ width: rem(33), height: rem(33) }} />
-          <br />
-          بازی
-        </UnstyledButton>
+        <Link to="/Boosts">
+          <UnstyledButton
+            size="xs"
+            mr={'xs'}
+            ml={'xs'}
+            mt={'xs'}
+            style={{ textAlign: 'center', color: 'white' }}
+          >
+            <IconBolt style={{ width: rem(15), height: rem(15) }} />
+            <br />
+            تقویت
+          </UnstyledButton>
+        </Link>
 
-        {/* <Link to="/Friends"> */}
+        <Link to="/Game">
+          <UnstyledButton
+            mr={'xl'}
+            ml={'xl'}
+            style={{ textAlign: 'center', color: 'white' }}
+          >
+            <IconDeer style={{ width: rem(33), height: rem(33) }} />
+            <br />
+            بازی
+          </UnstyledButton>
+        </Link>
+        
+        <Link to="/Friends">
           <UnstyledButton
             size="xs"
             mr={'xs'}
@@ -57,21 +64,22 @@ function FooterMenu() {
             <br />
             دوستان
           </UnstyledButton>
-        {/* </Link> */}
+        </Link>
 
-        <UnstyledButton
-          size="xs"
-          mr={'xs'}
-          ml={'xs'}
-          mt={'xs'}
-          style={{ textAlign: 'center', color: 'white' }}
-        >
-          <IconGift style={{ width: rem(15), height: rem(15) }} />
-          <br />
-          جایزه
-        </UnstyledButton>
+        <Link to="/Gifts">
+          <UnstyledButton
+            size="xs"
+            mr={'xs'}
+            ml={'xs'}
+            mt={'xs'}
+            style={{ textAlign: 'center', color: 'white' }}
+          >
+            <IconGift style={{ width: rem(15), height: rem(15) }} />
+            <br />
+            جایزه
+          </UnstyledButton>
 
-        {/* </Link> */}
+        </Link>
       </Flex>
     </Container>
   );
