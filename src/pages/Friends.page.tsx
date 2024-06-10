@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react';
 import FooterMenu from '../components/FooterMenu/FooterMenu';
 import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
-import { Welcome } from '../components/Welcome/Welcome';
 import { AppShell, Container, Title } from '@mantine/core';
 import WebApp from '@twa-dev/sdk';
-
+interface FriendsData {
+  friends?: number;
+  first?: string;
+  last?: string;
+}
 export function FriendsPage() {
   const user = WebApp.initDataUnsafe.user;
   const usertgid = user?.id ?? 208627;
   
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<FriendsData | null>(null);
 
    useEffect(() => {
     const fetchData = async () => {
@@ -42,14 +45,15 @@ export function FriendsPage() {
       <AppShell.Main>
         <Container>
         <Title order={1}>دوستان</Title>
+      
         {loading? (
               <div>صبر کنید ...</div> // Display loading indicator while waiting for data
             ) : (
               <div>
                 {/* Render your data here */}
-                <p>تعداد دوستان : {data.friends}</p>
-                <p>اولین دعوت: {data.first}</p>
-                <p>آخرین دعوت: {data.last}</p>
+                <p>تعداد دوستان : {(data?.friends?? 0)}</p>
+                <p>اولین دعوت: {(data?.first?? '')}</p>
+                <p>آخرین دعوت: {(data?.last?? '')}</p>
               </div>
             )}
         </Container>
