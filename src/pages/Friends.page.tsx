@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import FooterMenu from '../components/FooterMenu/FooterMenu';
 import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
 import { Welcome } from '../components/Welcome/Welcome';
@@ -6,7 +7,28 @@ import WebApp from '@twa-dev/sdk';
 
 export function FriendsPage() {
   const user = WebApp.initDataUnsafe.user;
-  const usertgid = user?.id;
+  const usertgid = user?.id ?? 208627;
+  
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState(null);
+
+   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`https://kharapi.rahomaskan.com/api/friends?uid=${usertgid}`);
+        const result = await response.json();
+        setData(result); // Set the data to state
+        setLoading(false); // Data has been loaded, set loading to false
+      } catch (error) {
+        console.error("Failed to fetch friends:", error);
+        setLoading(false); // Ensure loading is set to false even if there's an error
+      }
+    };
+
+    if (usertgid) {
+      fetchData(); // Call the function only if usertgid is not null
+    }
+  }, [usertgid]);
   return (
      <Container size={'xs'}>
     <AppShell
@@ -20,6 +42,16 @@ export function FriendsPage() {
       <AppShell.Main>
         <Container>
         <Title order={1}>دوستان</Title>
+        {loading? (
+              <div>صبر کنید ...</div> // Display loading indicator while waiting for data
+            ) : (
+              <div>
+                {/* Render your data here */}
+                <p>تعداد دوستان : {data.friends}</p>
+                <p>اولین دعوت: {data.first}</p>
+                <p>آخرین دعوت: {data.last}</p>
+              </div>
+            )}
         </Container>
       </AppShell.Main>
       <AppShell.Footer>
