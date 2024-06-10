@@ -18,7 +18,7 @@ export function FriendsPage() {
    useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://kharapi.rahomaskan.com/api/friends?uid=${usertgid}`);
+        const response = await fetch(`https://kharapi.rahomaskan.com/api/friends/${usertgid}`);
         const result = await response.json();
         setData(result); // Set the data to state
         setLoading(false); // Data has been loaded, set loading to false
