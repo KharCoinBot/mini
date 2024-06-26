@@ -1,6 +1,6 @@
 import FooterMenu from '../components/FooterMenu/FooterMenu';
 import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
-import { AppShell, Container, Title } from '@mantine/core';
+import { AppShell, Container, Title, Text } from '@mantine/core';
 import WebApp from '@twa-dev/sdk';
 
 export function GiftsPage() {
@@ -20,6 +20,9 @@ export function GiftsPage() {
           <AppShell.Main>
             <Container>
             <Title order={1}>جایزه</Title>
+            <Text>
+              اینجا جایزه هایی که دریافت کردید را میبینید، بابت آروم کردن خر توی بازی جایزه میگیرید، بابت کارهایی که توی بازی اضافه میشه مانند عضو کانالها شدن هم جایزه میگیرید، همه جوایز به صورت خرکوین برای شما ارسال خواهند شد!
+            </Text>
             </Container>
           </AppShell.Main>
           <AppShell.Footer>
