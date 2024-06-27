@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import FooterMenu from '../components/FooterMenu/FooterMenu';
 import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
 import { Welcome } from '../components/Welcome/Welcome';
-import { AppShell, BackgroundImage, Box, Center, Container, Image, RingProgress, Text } from '@mantine/core';
+import { AppShell, BackgroundImage, Box, Center, Container, Image, Paper, RingProgress, Text } from '@mantine/core';
 import WebApp from '@twa-dev/sdk';
 
 // Custom useInterval hook
@@ -82,7 +82,7 @@ export function GamePage() {
           </AppShell.Header>
           <AppShell.Main>
             <Container>
-              <Box 
+              {/* <Box 
               maw={300} 
               mah={400}
               h={400}
@@ -108,7 +108,27 @@ export function GamePage() {
                   خربازیامون
                   </Text>                  
                   </BackgroundImage>
-              </Box>              
+              </Box>               */}
+
+{/* <Container fluid> */}
+          <Paper
+            style={{
+              backgroundImage: "url('https://kc.rahomaskan.com/assets/images/khar10.png')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              width: '100%',
+              height: '100%',
+              transition: 'opacity 0.5s',
+              opacity: isBlinking ? 0 : 1,
+            }}
+                onMouseDown={handleMouseDown}
+                onMouseUp={handleMouseUp}
+                onTouchStart={handleMouseDown}
+          >
+            <Image 
+            src="https://kc.rahomaskan.com/assets/images/khar10.png" />
+          </Paper>
+
               {isLoading && (
                 <Box ta={'center'}>
                   <RingProgress
