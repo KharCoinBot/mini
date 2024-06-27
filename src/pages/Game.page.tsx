@@ -105,7 +105,7 @@ export function GamePage() {
                   radius="sm"
                 >              
                   <Text>
-                  خرمون
+                  خربازیامون
                   </Text>                  
                   </BackgroundImage>
               </Box>              
