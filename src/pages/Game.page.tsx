@@ -124,6 +124,7 @@ export function GamePage() {
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
                 onTouchStart={handleMouseDown}
+                onTouchEnd={handleMouseUp}
           >
             <Image 
             src="https://kc.rahomaskan.com/assets/images/khar10.png" />
