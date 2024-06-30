@@ -31,7 +31,7 @@ export function EarnPage() {
                 </ThemeIcon>
               }
             >
-              <List.Item>50 $KHAR : کانال خر کوین</List.Item>
+              <List.Item>50 خرتومن : کانال خر کوین</List.Item>
             </List>
             </Blockquote>
 
@@ -46,9 +46,9 @@ export function EarnPage() {
                 </ThemeIcon>
               }
             >
-              <List.Item>10 $KHAR : گروه خر کوین</List.Item>
-              <List.Item>50 $KHAR : کانال نوبیتکس</List.Item>
-              <List.Item>30 $KHAR : کانال جاوید</List.Item>
+              <List.Item>10 خرتومن : گروه خر کوین</List.Item>
+              <List.Item>50 خرتومن : کانال نوبیتکس</List.Item>
+              <List.Item>30 خرتومن : کانال جاوید</List.Item>
             </List>
             </Blockquote>
 
@@ -64,10 +64,10 @@ export function EarnPage() {
                 </ThemeIcon>
               }
             >
-              <List.Item>10 $Khar : K Youtube Chanal</List.Item>
-              <List.Item>10 $Khar : K Youtube Chanal</List.Item>
-              <List.Item>10 $Khar : K Youtube Chanal</List.Item>
-              <List.Item>10 $Khar : K Youtube Chanal</List.Item>
+              <List.Item>10 خرتومن : کانال خران</List.Item>
+              <List.Item>10 خرتومن : کانال خران</List.Item>
+              <List.Item>10 خرتومن : کانال خران</List.Item>
+              <List.Item>10 خرتومن : کانال خران</List.Item>
             </List>
             </Blockquote>
             
