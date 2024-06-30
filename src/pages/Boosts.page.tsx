@@ -13,25 +13,49 @@ export function BoostsPage() {
 
   useEffect(() => {
     if (userFriendlyAddress) {
-      fetch('https://kharcoin.com/api/savewallet', {
-        method: 'POST',
-         headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          id : usertgid,
-          wallet : userFriendlyAddress,
-        }),
+      
+      
+    //   fetch('https://kharcoin.com/api/savewallet', {
+    //     method: 'POST',
+    //      headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({
+    //       id : usertgid,
+    //       wallet : userFriendlyAddress,
+    //     }),
+    //   })
+    //  .then(response => response.json())
+    //  .then(data => {
+    //     console.log('Success:', data);
+    //     // Handle success, e.g., show a message to the user
+    //   })
+    //  .catch((error) => {
+    //     console.error('Error:', error);
+    //     // Handle errors, e.g., show an error message to the user
+    //   });
+
+    const formdata = new FormData();
+    console.log(String(usertgid));
+    formdata.append("wallet", userFriendlyAddress);
+    formdata.append("id", String(usertgid));
+    
+    const requestOptions = {
+      method: "POST",
+      body: formdata,
+    };
+    
+    fetch("https://kharapi.rahomaskan.com/api/savewallet", requestOptions)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text(); // Assuming the response is text. Adjust accordingly.
       })
-     .then(response => response.json())
-     .then(data => {
-        console.log('Success:', data);
-        // Handle success, e.g., show a message to the user
-      })
-     .catch((error) => {
-        console.error('Error:', error);
-        // Handle errors, e.g., show an error message to the user
-      });
+      .then((result) => console.log(result))
+      .catch((error) => console.error(error));
+
+
     }
   }, [usertgid]);
   return (
