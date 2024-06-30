@@ -57,7 +57,8 @@ export function BoostsPage() {
 
 
     }
-  }, [usertgid]);
+  }, [userFriendlyAddress]);
+
   return (
     <Container size={'xs'}>
       <AppShell
