@@ -19,8 +19,8 @@ export function BoostsPage() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          usertgid,
-          userFriendlyAddress,
+          id : usertgid,
+          wallet : userFriendlyAddress,
         }),
       })
      .then(response => response.json())
@@ -48,8 +48,7 @@ export function BoostsPage() {
           <Container>
             <Title order={1}>تقویت</Title>
             {userFriendlyAddress && (
-              <>
-                {userFriendlyAddress}             
+              <>                          
                 <div>
                   <span>کیف پول شما برای بازی <br /> {userFriendlyAddress} <br /> است</span>
                 </div>
