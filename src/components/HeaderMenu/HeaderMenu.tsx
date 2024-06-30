@@ -34,7 +34,7 @@ function HeaderMenu({ username, photoUrl }: { username: string; photoUrl: string
           ml={'xs'}
           style={{ textAlign: 'center', color: 'white' }}
         >
-          <IconWallet style={{ width: rem(24), height: rem(24) }} />
+          {/* <IconWallet style={{ width: rem(24), height: rem(24) }} /> */}
           <TonConnectButton />
         </UnstyledButton>
       </Flex>
