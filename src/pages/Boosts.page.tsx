@@ -3,9 +3,37 @@ import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
 import { Welcome } from '../components/Welcome/Welcome';
 import { AppShell, Container, SimpleGrid, Title, Text, Box, Button } from '@mantine/core';
 import WebApp from '@twa-dev/sdk';
+import { useTonAddress } from '@tonconnect/ui-react';
+import { useEffect } from 'react';
+
 export function BoostsPage() {
   const user = WebApp.initDataUnsafe.user;
   const usertgid = user?.id;
+  const userFriendlyAddress = useTonAddress();
+
+  useEffect(() => {
+    if (userFriendlyAddress) {
+      fetch('https://kharcoin.com/api/savewallet', {
+        method: 'POST',
+         headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          usertgid,
+          userFriendlyAddress,
+        }),
+      })
+     .then(response => response.json())
+     .then(data => {
+        console.log('Success:', data);
+        // Handle success, e.g., show a message to the user
+      })
+     .catch((error) => {
+        console.error('Error:', error);
+        // Handle errors, e.g., show an error message to the user
+      });
+    }
+  }, [usertgid]);
   return (
     <Container size={'xs'}>
       <AppShell
@@ -19,13 +47,22 @@ export function BoostsPage() {
         <AppShell.Main>
           <Container>
             <Title order={1}>تقویت</Title>
+            {userFriendlyAddress && (
+              <>
+                {userFriendlyAddress}             
+                <div>
+                  <span>کیف پول شما برای بازی <br /> {userFriendlyAddress} <br /> است</span>
+                </div>
+              </>
+            )}
+
             <Box pt={'lg'} mt={'lg'} ta={'center'}>
-            <Button variant="filled" color="yellow" size="xl" radius="md" ta={'center'}>
-              خر کوین
-            </Button>
-            </Box>            
+              <Button variant="filled" color="yellow" size="xl" radius="md" ta={'center'}>
+                خر کوین
+              </Button>
+            </Box>
             <SimpleGrid cols={2} spacing="xl" verticalSpacing="xl" pt={'lg'} mt={'lg'}>
-            <Box p={'lg'} bg={'gray'}>
+              <Box p={'lg'} bg={'gray'}>
                 <Text
                   ta={'center'}
                   size="xl"
@@ -35,8 +72,8 @@ export function BoostsPage() {
                 >
                   شــیــر خـــــر
                 </Text>
-                </Box> 
-                <Box p={'lg'} bg={'gray'}>
+              </Box>
+              <Box p={'lg'} bg={'gray'}>
                 <Text
                   ta={'center'}
                   size="xl"

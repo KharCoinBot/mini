@@ -1,5 +1,6 @@
 import { Avatar, Container, Flex, UnstyledButton, rem } from '@mantine/core';
 import { IconAt, IconUserShare, IconWallet } from '@tabler/icons-react';
+import { TonConnectButton } from '@tonconnect/ui-react';
 
 function HeaderMenu({ username, photoUrl }: { username: string; photoUrl: string }) {
   return (
@@ -34,6 +35,7 @@ function HeaderMenu({ username, photoUrl }: { username: string; photoUrl: string
           style={{ textAlign: 'center', color: 'white' }}
         >
           <IconWallet style={{ width: rem(24), height: rem(24) }} />
+          <TonConnectButton />
         </UnstyledButton>
       </Flex>
     </Container>
