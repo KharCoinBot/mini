@@ -78,42 +78,13 @@ export function GamePage() {
           withBorder={false}
         >
           <AppShell.Header>
-            <HeaderMenu username={user?.username ?? 'KC'} photoUrl={user?.photo_url ?? 'https://kc.rahomaskan.com/assets/images/kharcoin.jpg'} />
+            <HeaderMenu username={user?.username ?? 'KC'} photoUrl={user?.photo_url ?? 'https://bot.kharcoin.info/assets/images/kharcoin.jpg'} />
           </AppShell.Header>
           <AppShell.Main>
             <Container>
-              {/* <Box 
-              maw={300} 
-              mah={400}
-              h={400}
-              w={200}
-              mx="auto"
-              ta={'center'} 
-              mt={'lg'} 
-              pt={'lg'}
-              style={{
-                width: '100%',
-                height: '100%',
-                transition: 'opacity 0.5s',
-                opacity: isBlinking ? 0 : 1,
-              }}
-                onMouseDown={handleMouseDown}
-                onMouseUp={handleMouseUp}
-              >
-                <BackgroundImage
-                  src="https://kc.rahomaskan.com/assets/images/khar10.png"
-                  radius="sm"
-                >              
-                  <Text>
-                  خربازیامون
-                  </Text>                  
-                  </BackgroundImage>
-              </Box>               */}
-
-{/* <Container fluid> */}
           <Paper
             style={{
-              backgroundImage: "url('https://kc.rahomaskan.com/assets/images/khar10.png')",
+              backgroundImage: "url('https://bot.kharcoin.info/assets/images/khar10.png')",
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               width: '100%',
@@ -127,7 +98,7 @@ export function GamePage() {
                 onTouchEnd={handleMouseUp}
           >
             <Image 
-            src="https://kc.rahomaskan.com/assets/images/khar10.png" />
+            src="https://bot.kharcoin.info/assets/images/khar10.png" />
           </Paper>
 
               {isLoading && (

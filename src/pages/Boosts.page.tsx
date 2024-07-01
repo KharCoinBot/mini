@@ -22,7 +22,7 @@ export function BoostsPage() {
       method: "POST",
       body: formdata,
     };
-    fetch("https://kharapi.rahomaskan.com/api/savewallet", requestOptions)
+    fetch("https://api.kharcoin.info/api/savewallet", requestOptions)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -41,7 +41,7 @@ export function BoostsPage() {
         withBorder={false}
       >
         <AppShell.Header>
-          <HeaderMenu username={user?.username ?? 'KC'} photoUrl={user?.photo_url ?? 'https://kc.rahomaskan.com/assets/images/kharcoin.jpg'} />
+          <HeaderMenu username={user?.username ?? 'KC'} photoUrl={user?.photo_url ?? 'https://bot.kharcoin.info/assets/images/kharcoin.jpg'} />
         </AppShell.Header>
         <AppShell.Main>
           <Container>
