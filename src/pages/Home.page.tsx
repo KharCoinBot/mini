@@ -9,13 +9,12 @@ export function HomePage() {
   return (
     <>
       <Container size={'xs'}>
-        <AppShell
-          header={{ height: 40 }}
-          footer={{ height: 70 }}
-          withBorder={false}
-        >
+        <AppShell header={{ height: 40 }} footer={{ height: 70 }} withBorder={false}>
           <AppShell.Header>
-            <HeaderMenu username={user?.username ?? 'KC'} photoUrl={user?.photo_url ?? 'https://kc.rahomaskan.com/assets/images/kharcoin.jpg'} />
+            <HeaderMenu
+              username={user?.username ?? 'KC'}
+              photoUrl={user?.photo_url ?? 'https://kc.rahomaskan.com/assets/images/kharcoin.jpg'}
+            />
           </AppShell.Header>
           <AppShell.Main>
             <Container>

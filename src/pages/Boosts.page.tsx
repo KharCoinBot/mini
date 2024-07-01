@@ -13,43 +13,44 @@ export function BoostsPage() {
 
   useEffect(() => {
     if (userFriendlyAddress) {
-    const formdata = new FormData();
-    console.log(String(usertgid));
-    formdata.append("wallet", userFriendlyAddress);
-    formdata.append("id", String(usertgid));
-    
-    const requestOptions = {
-      method: "POST",
-      body: formdata,
-    };
-    fetch("https://api.kharcoin.info/api/savewallet", requestOptions)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.text(); // Assuming the response is text. Adjust accordingly.
-      })
-      .then((result) => console.log(result))
-      .catch((error) => console.error(error));
+      const formdata = new FormData();
+      console.log(String(usertgid));
+      formdata.append('wallet', userFriendlyAddress);
+      formdata.append('id', String(usertgid));
+
+      const requestOptions = {
+        method: 'POST',
+        body: formdata,
+      };
+      fetch('https://api.kharcoin.info/api/savewallet', requestOptions)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.text(); // Assuming the response is text. Adjust accordingly.
+        })
+        .then((result) => console.log(result))
+        .catch((error) => console.error(error));
     }
   }, [userFriendlyAddress]);
   return (
     <Container size={'xs'}>
-      <AppShell
-        header={{ height: 40 }}
-        footer={{ height: 70 }}
-        withBorder={false}
-      >
+      <AppShell header={{ height: 40 }} footer={{ height: 70 }} withBorder={false}>
         <AppShell.Header>
-          <HeaderMenu username={user?.username ?? 'KC'} photoUrl={user?.photo_url ?? 'https://bot.kharcoin.info/assets/images/kharcoin.jpg'} />
+          <HeaderMenu
+            username={user?.username ?? 'KC'}
+            photoUrl={user?.photo_url ?? 'https://bot.kharcoin.info/assets/images/kharcoin.jpg'}
+          />
         </AppShell.Header>
         <AppShell.Main>
           <Container>
             <Title order={1}>تقویت</Title>
             {userFriendlyAddress && (
-              <>                          
+              <>
                 <div>
-                  <span>کیف پول شما برای بازی <br /> {userFriendlyAddress} <br /> است</span>
+                  <span>
+                    کیف پول شما برای بازی <br /> {userFriendlyAddress} <br /> است
+                  </span>
                 </div>
               </>
             )}

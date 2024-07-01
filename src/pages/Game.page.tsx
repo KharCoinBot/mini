@@ -2,7 +2,17 @@ import { useEffect, useRef, useState } from 'react';
 import FooterMenu from '../components/FooterMenu/FooterMenu';
 import HeaderMenu from '../components/HeaderMenu/HeaderMenu';
 import { Welcome } from '../components/Welcome/Welcome';
-import { AppShell, BackgroundImage, Box, Center, Container, Image, Paper, RingProgress, Text } from '@mantine/core';
+import {
+  AppShell,
+  BackgroundImage,
+  Box,
+  Center,
+  Container,
+  Image,
+  Paper,
+  RingProgress,
+  Text,
+} from '@mantine/core';
 import WebApp from '@twa-dev/sdk';
 
 // Custom useInterval hook
@@ -26,10 +36,8 @@ function useInterval(callback: () => void, delay: number) {
   }, [delay]);
 }
 
-
 export function GamePage() {
   const user = WebApp.initDataUnsafe.user;
-
 
   // State to manage the blinking and loading status
   const [isBlinking, setIsBlinking] = useState(false);
@@ -37,7 +45,6 @@ export function GamePage() {
   const [progress, setProgress] = useState(0); // Reset initial progress to 0
 
   const [showText, setShowText] = useState(false); // State to control the visibility of the text
-
 
   // Event handler for mouse down
   const handleMouseDown = () => {
@@ -72,34 +79,32 @@ export function GamePage() {
   return (
     <>
       <Container size={'xs'}>
-        <AppShell
-          header={{ height: 40 }}
-          footer={{ height: 70 }}
-          withBorder={false}
-        >
+        <AppShell header={{ height: 40 }} footer={{ height: 70 }} withBorder={false}>
           <AppShell.Header>
-            <HeaderMenu username={user?.username ?? 'KC'} photoUrl={user?.photo_url ?? 'https://bot.kharcoin.info/assets/images/kharcoin.jpg'} />
+            <HeaderMenu
+              username={user?.username ?? 'KC'}
+              photoUrl={user?.photo_url ?? 'https://bot.kharcoin.info/assets/images/kharcoin.jpg'}
+            />
           </AppShell.Header>
           <AppShell.Main>
             <Container>
-          <Paper
-            style={{
-              backgroundImage: "url('https://bot.kharcoin.info/assets/images/khar10.png')",
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              width: '100%',
-              height: '100%',
-              transition: 'opacity 0.5s',
-              opacity: isBlinking ? 0 : 1,
-            }}
+              <Paper
+                style={{
+                  backgroundImage: "url('https://bot.kharcoin.info/assets/images/khar10.png')",
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  width: '100%',
+                  height: '100%',
+                  transition: 'opacity 0.5s',
+                  opacity: isBlinking ? 0 : 1,
+                }}
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
                 onTouchStart={handleMouseDown}
                 onTouchEnd={handleMouseUp}
-          >
-            <Image 
-            src="https://bot.kharcoin.info/assets/images/khar10.png" />
-          </Paper>
+              >
+                <Image src="https://bot.kharcoin.info/assets/images/khar10.png" />
+              </Paper>
 
               {isLoading && (
                 <Box ta={'center'}>
@@ -110,7 +115,7 @@ export function GamePage() {
                     sections={[{ value: progress, color: 'blue' }]} // Dynamic progress value
                     label={
                       <Text c="blue" fw={700} ta="center" size="xl">
-                        {showText ? "خره خوبی داریم آروم شده الان!" : progress + "%"}
+                        {showText ? 'خره خوبی داریم آروم شده الان!' : progress + '%'}
                       </Text>
                     }
                   />
