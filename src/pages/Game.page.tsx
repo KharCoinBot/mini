@@ -90,6 +90,9 @@ export function GamePage() {
             <Container>
               <Paper
                 style={{
+                  display: 'flex',
+                  justifyContent: 'center', // Center children horizontally
+                  alignItems: 'center', // Center children vertically
                   backgroundImage: "url('https://bot.kharcoin.info/assets/images/khar10.png')",
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
@@ -107,7 +110,23 @@ export function GamePage() {
               </Paper>
 
               {isLoading && (
-                <Box ta={'center'}>
+                <Paper
+                style={{
+                  position: 'absolute', // Use absolute positioning to overlay on top
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  display: 'flex',
+                  justifyContent: 'center', // Center children horizontally
+                  alignItems: 'center', // Center children vertically
+                  width: '100%',
+                  height: '100%',
+                  transition: 'opacity 0.5s',
+                  zIndex: 2, // Higher z-index to appear on top
+                }}
+              >
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
                   <RingProgress
                     size={400}
                     thickness={20}
@@ -119,7 +138,8 @@ export function GamePage() {
                       </Text>
                     }
                   />
-                </Box>
+                  </div>
+                </Paper>
               )}
             </Container>
           </AppShell.Main>
