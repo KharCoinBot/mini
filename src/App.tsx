@@ -5,6 +5,7 @@ import { theme } from './theme';
 import React from 'react';
 import { TonConnectUIProvider } from '@tonconnect/ui-react';
 import { Notifications } from '@mantine/notifications';
+import '@mantine/notifications/styles.css';
 
 export default function App() {
   return (
@@ -12,7 +13,7 @@ export default function App() {
       <TonConnectUIProvider manifestUrl="https://kc.rahomaskan.com/tonconnect-manifest.json">
         <DirectionProvider initialDirection="rtl">
           <MantineProvider theme={theme} forceColorScheme="dark">
-          <Notifications />
+            <Notifications position="top-right" zIndex={1000} />
             <Router />
           </MantineProvider>
         </DirectionProvider>
