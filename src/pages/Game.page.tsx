@@ -27,11 +27,6 @@ export function GamePage() {
     setIsLoading(false); // Stop showing the loading indicator
     if (progress >= 100) {
       setShowText(true); // Show text if progress reached 100%
-      // setIsBlinking(true);
-      // notifications.show({
-      //   title: 'آرامش خرکی',
-      //   message: 'خرمون آروم شد! الان جایزه خرکوین میگیری! 🎉',
-      // });
     } else {
       setProgress(0); // Reset progress if it did not reach 100%
     }
@@ -39,7 +34,6 @@ export function GamePage() {
 
   useEffect(() => {
     let intervalId = setInterval(() => {
-      console.log(progress);
       if (progress == 100) {
         notifications.show({
           title: 'آرامش خرکی',
