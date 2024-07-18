@@ -5,6 +5,7 @@ import { AppShell, Container, SimpleGrid, Title, Text, Box, Button } from '@mant
 import WebApp from '@twa-dev/sdk';
 import { useTonAddress } from '@tonconnect/ui-react';
 import { useEffect } from 'react';
+import { API_CONFIG } from '../config/apiConfig';
 
 export function BoostsPage() {
   const user = WebApp.initDataUnsafe.user;
@@ -22,7 +23,7 @@ export function BoostsPage() {
         method: 'POST',
         body: formdata,
       };
-      fetch('https://api.kharcoin.info/api/savewallet', requestOptions)
+      fetch(`${API_CONFIG.API_BASE_URL}savewallet`, requestOptions)
         .then((response) => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -39,7 +40,7 @@ export function BoostsPage() {
         <AppShell.Header>
           <HeaderMenu
             username={user?.username ?? 'KC'}
-            photoUrl={user?.photo_url ?? 'https://bot.kharcoin.info/assets/images/kharcoin.jpg'}
+            photoUrl={user?.photo_url ?? `${API_CONFIG.ASSETS_URL}assets/images/kharcoin.jpg`}
           />
         </AppShell.Header>
         <AppShell.Main>
